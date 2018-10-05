@@ -7,15 +7,21 @@ import {
 } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {
+  MatButtonModule,
+  MatDialogModule,
   MatPaginatorModule,
+  MatProgressBarModule,
   MatProgressSpinnerModule,
   MatSortModule,
   MatTableModule,
 } from '@angular/material';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { PeopleComponent } from './people.component';
 import { SwapiService } from './swapi.service';
+import { ShowMoreComponent } from './show-more.component';
+import { DataComponent } from './data.component';
 
 const routes: Route[] = [{
   path: 'people',
@@ -25,13 +31,19 @@ const routes: Route[] = [{
 @NgModule({
   declarations: [
     AppComponent,
+    DataComponent,
     PeopleComponent,
+    ShowMoreComponent,
   ],
   imports:      [
     BrowserModule,
     BrowserAnimationsModule,
+    CommonModule,
     HttpClientModule,
+    MatButtonModule,
+    MatDialogModule,
     MatPaginatorModule,
+    MatProgressBarModule,
     MatProgressSpinnerModule,
     MatSortModule,
     MatTableModule,
@@ -40,6 +52,7 @@ const routes: Route[] = [{
   providers: [
     SwapiService,
   ],
+  entryComponents: [DataComponent],
   bootstrap:    [AppComponent],
 })
 export class AppModule {
