@@ -3,8 +3,8 @@ import {
   Input,
 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DataComponent } from './data.component';
 import { MatDialog } from '@angular/material';
+import { TreeComponent } from './tree.component';
 
 @Component({
   selector: 'app-show-more',
@@ -20,7 +20,7 @@ export class ShowMoreComponent {
   public load(event: MouseEvent): void {
 
     this.httpClient.get(this.link).subscribe((data) => {
-      const dialogRef = this.dialog.open(DataComponent, {
+      const dialogRef = this.dialog.open(TreeComponent, {
         width:       '500px',
         data,
         role: 'alertdialog',

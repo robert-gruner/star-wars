@@ -14,6 +14,7 @@ import {
   MatProgressSpinnerModule,
   MatSortModule,
   MatTableModule,
+  MatTreeModule,
 } from '@angular/material';
 import { CommonModule } from '@angular/common';
 
@@ -21,7 +22,7 @@ import { AppComponent } from './app.component';
 import { PeopleComponent } from './people.component';
 import { SwapiService } from './swapi.service';
 import { ShowMoreComponent } from './show-more.component';
-import { DataComponent } from './data.component';
+import { TreeComponent } from './tree.component';
 
 const routes: Route[] = [{
   path: 'people',
@@ -31,9 +32,9 @@ const routes: Route[] = [{
 @NgModule({
   declarations: [
     AppComponent,
-    DataComponent,
     PeopleComponent,
     ShowMoreComponent,
+    TreeComponent,
   ],
   imports:      [
     BrowserModule,
@@ -47,12 +48,15 @@ const routes: Route[] = [{
     MatProgressSpinnerModule,
     MatSortModule,
     MatTableModule,
+    MatTreeModule,
     RouterModule.forRoot(routes),
   ],
   providers: [
     SwapiService,
   ],
-  entryComponents: [DataComponent],
+  entryComponents: [
+    TreeComponent,
+  ],
   bootstrap:    [AppComponent],
 })
 export class AppModule {
