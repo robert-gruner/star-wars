@@ -32,7 +32,7 @@ export interface SwapiCharacters {
 export class SwapiService {
   constructor(private http: HttpClient) {}
 
-  getCharacters(page: number): Observable<SwapiResponse<SwapiCharacters>> {
+  public getCharacters(page: number): Observable<SwapiResponse<SwapiCharacters>> {
     const href = 'https://swapi.co/api/people/';
     const requestUrl =
             `${href}?page=${page + 1}`;

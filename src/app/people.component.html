@@ -33,17 +33,28 @@
 
       <ng-container matColumnDef="species">
         <th mat-header-cell *matHeaderCellDef>Species</th>
-        <td mat-cell *matCellDef="let row">{{row.species}}</td>
+        <td mat-cell *matCellDef="let row">
+          <ng-container *ngFor="let spec of row.species">
+            <app-show-more [link]="spec"></app-show-more>
+        </ng-container></td>
       </ng-container>
 
       <ng-container matColumnDef="films">
         <th mat-header-cell *matHeaderCellDef>Films</th>
-        <td mat-cell *matCellDef="let row">{{row.films}}</td>
+        <td mat-cell *matCellDef="let row">
+          <ng-container *ngFor="let film of row.films">
+              <app-show-more [link]="film"></app-show-more>
+          </ng-container>
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="starships">
         <th mat-header-cell *matHeaderCellDef>Starships</th>
-        <td mat-cell *matCellDef="let row">{{row.starships}}</td>
+        <td mat-cell *matCellDef="let row">
+            <ng-container *ngFor="let ship of row.starships">
+                <app-show-more [link]="ship"></app-show-more>
+            </ng-container>
+        </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
